@@ -3,29 +3,40 @@
 #notes that can be printed (100, 50, 10, 5, rest of money)
 # write a definition that takes the amount as input and process the required output
 
-def to_notes(request):
-    notes = [100,50,10,5,4,3,2,1]
-    for note in notes:
-        while request >= note:
-            print "Give {}".format(note)
-            request -= note
+def to_notes(request, money):
+    money -= request
+    while request >= 100:
+        print "Give 100"
+        request -= 100
 
-    return
+    while request >= 50:
+        print "Give 50"
+        request -= 50
+
+    while request >= 10:
+        print "Give 10"
+        request -= 10
+
+    if request > 5:
+        print "Give 5"
+        request -= 5
+
+    if request > 0:
+        print "Give " + str(request)
+
+    return money
 
 def withdraw(request, money):
-    balance = 0
     if request <= 0:
         print "Kindly enter valid amount to withdraw!"
     elif request > money:
         print ("Request is over than available funds, kindly request {} or less.".format(money))
     else:
-        to_notes(request)
-        balance = money - request
+        balance = to_notes(request, money)
         print ("current balance is: " + str(balance))
-        print "=============="
         return balance
 
-    return money
+
 
 money = 500
 
@@ -33,6 +44,5 @@ money = withdraw(100,money)
 money = withdraw(10, money)
 money = withdraw(34, money)
 money = withdraw(144, money)
-money = withdraw(800, money)
 money = withdraw(250, money)
 
