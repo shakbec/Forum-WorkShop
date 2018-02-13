@@ -26,19 +26,23 @@ def to_notes(request, money):
 
     return money
 
-def request_check(request, money):
+def withdraw(request, money):
     if request <= 0:
         print "Kindly enter valid amount to withdraw!"
     elif request > money:
         print ("Request is over than available funds, kindly request {} or less.".format(money))
     else:
         x = to_notes(request, money)
+        print ("current balance is: " + str(x))
         return x
+
+
 
 money = 500
 
-money = request_check(100,money)
-money = request_check(10, money)
-money = request_check(34, money)
-money = request_check(144, money)
+money = withdraw(100,money)
+money = withdraw(10, money)
+money = withdraw(34, money)
+money = withdraw(144, money)
+money = withdraw(250, money)
 
