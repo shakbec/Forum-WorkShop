@@ -4,29 +4,25 @@
 # write a definition that takes the amount as input and process the required output
 
 def to_notes(request, money):
+    money -= request
     while request >= 100:
         print "Give 100"
         request -= 100
-        money -= 100
 
     while request >= 50:
         print "Give 50"
         request -= 50
-        money -= 50
 
     while request >= 10:
         print "Give 10"
         request -= 10
-        money -= 10
 
     if request > 5:
         print "Give 5"
         request -= 5
-        money -= 5
 
     if request > 0:
         print "Give " + str(request)
-        money -= request
 
     return money
 
