@@ -1,7 +1,9 @@
 # Write a program that simulates an ATM. The user will request an amount
 #and the program will give the user money notes based on the available
 #notes that can be printed (100, 50, 10, 5, rest of money)
-# write a definition that takes the amount as input and process the required output
+#write a definition that takes the amount as input and process the required output
+#Use classes to define different banks with different balances
+#Use lists to store money withdrawn to print receipts
 
 class ATM:
 
