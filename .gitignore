@@ -58,3 +58,5 @@ docs/_build/
 target/
 
 atm solution/\.idea/
+
+Forums/\.idea/
