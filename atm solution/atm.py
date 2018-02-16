@@ -20,9 +20,9 @@ class ATM:
         print "Current Balance = " + str(self.balance)
 
         if request <= 0:
-            print "==============\nKindly enter valid amount to withdraw!\n=============="
+            print "=" * 25 + "\nKindly enter valid amount to withdraw!\n" + "=" * 25
         elif request > self.balance:
-            print ("==============\nRequest is over than available funds, kindly request {} or less.\n==============".format(self.balance))
+            print ("=" * 25 + "\nKindly request {} or less.\n".format(self.balance)) + "=" * 25
         else:
             self.withdrawals_list.append(request)
             self.balance -= request
@@ -32,7 +32,7 @@ class ATM:
                     print "Give {}".format(note)
                     request -= note
 
-            print "=============="
+            print "=" * 25
 
         return self.balance
 
