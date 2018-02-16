@@ -1,3 +1,5 @@
+#This file is used to initiate stores for members and posts
+
 class MembersStore:
     members = []
 
