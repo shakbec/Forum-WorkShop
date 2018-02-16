@@ -1,3 +1,5 @@
+#This file is used to initiate instances of members and posts
+
 class Member:
 
     def __init__(self, id, name, age):
