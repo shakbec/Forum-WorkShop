@@ -1,4 +1,4 @@
-from models import *
+from models import Member,Post
 
 member1 = Member("ahmed",24)
 member2 = Member("khalid",24)
