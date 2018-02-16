@@ -60,3 +60,7 @@ target/
 atm solution/\.idea/
 
 Forums/\.idea/
+
+\.idea/
+
+testing/
