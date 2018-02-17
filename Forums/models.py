@@ -11,6 +11,9 @@ class Member:
     def __str__(self):
         return 'Id: {}, Name: {}, Age: {}'.format(self.member_id, self.name, self.age)
 
+    def __repr__(self):
+        return 'Id: {}, Name: {}, Age: {}'.format(self.member_id, self.name, self.age)
+
 
 class Post:
 
@@ -20,4 +23,7 @@ class Post:
         self.body = body
 
     def __str__(self):
+        return 'Id: {}, Title: {}, Body: {}'.format(self.post_id, self.title, self.body)
+
+    def __repr__(self):
         return 'Id: {}, Title: {}, Body: {}'.format(self.post_id, self.title, self.body)
