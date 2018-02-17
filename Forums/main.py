@@ -3,8 +3,8 @@ import models, stores
 mems = stores.MembersStore()
 psts = stores.PostsStore()
 
-member1 = models.Member("ahmed", 24)
-member2 = models.Member("khalid", 24)
+member1 = models.Member("Ahmed", 24)
+member2 = models.Member("Khalid", 24)
 
 post1 = models.Post("First Post", "This is the first post ever.")
 post2 = models.Post("Python Programming", "Python programming is fun.")

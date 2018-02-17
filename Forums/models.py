@@ -9,7 +9,7 @@ class Member:
         self.age = age
 
     def __str__(self):
-        return 'id: {}, name: {}, age: {}'.format(self.member_id, self.name, self.age)
+        return 'Id: {}, Name: {}, Age: {}'.format(self.member_id, self.name, self.age)
 
 
 class Post:
