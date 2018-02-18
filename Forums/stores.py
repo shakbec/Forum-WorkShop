@@ -5,6 +5,17 @@ class MembersStore:
     members = []
     last_id = 1
 
+    def get_by_name(self, name):
+        all_members = self.get_all()
+        similar = []
+        for member in all_members:
+            if name == member.name:
+                similar.append(member)
+
+        return similar
+
+
+
     def get_all(self):
         # get all members
         return MembersStore.members
@@ -36,6 +47,14 @@ class MembersStore:
     def delete(self, id):
         target = self.get_by_id(id)
         MembersStore.members.remove(target)
+
+    def update(self, member):
+        # update member
+        all_members = self.get_all()
+        for object in all_members:
+            if object.id == member.id:
+                object.name = member.name
+                object.age = member.age
 
 
 class PostsStore:
