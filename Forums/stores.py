@@ -26,12 +26,11 @@ class MembersStore:
 
     def entity_exists(self, member):
         #check if member exists or not
-        result = self.get_by_id(member.id)
-        if result is not None:
+        result = False
+        if self.get_by_id(member.id) is not None:
             result = True
             return result
 
-        result = False
         return result
 
     def delete(self, id):
@@ -65,11 +64,12 @@ class PostsStore:
 
     def entity_exists(self, post):
         #check if post exists or not
-        result = self.get_by_id(post.id)
-        if result:
-            return True
+        result = False
+        if self.get_by_id(post.id) is not None:
+            result = True
+            return result
 
-        return False
+        return result
 
     def delete(self, id):
         target = self.get_by_id(id)
