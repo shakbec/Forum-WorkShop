@@ -40,7 +40,6 @@ class MembersStore:
         result = False
         if self.get_by_id(member.id) is not None:
             result = True
-            return result
 
         return result
 
@@ -51,10 +50,10 @@ class MembersStore:
     def update(self, member):
         # update member
         all_members = self.get_all()
-        for object in all_members:
-            if object.id == member.id:
-                object.name = member.name
-                object.age = member.age
+        for index, current_member in enumerate(all_members):
+            if current_member.id == member.id:
+                all_members[index] = member
+
 
 
 class PostsStore:
