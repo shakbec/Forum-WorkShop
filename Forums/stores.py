@@ -1,4 +1,5 @@
 #This file is used to initiate stores for members and posts
+import itertools
 
 
 class MembersStore:
@@ -6,13 +7,7 @@ class MembersStore:
     last_id = 1
 
     def get_by_name(self, name):
-        all_members = self.get_all()
-        similar = []
-        for member in all_members:
-            if name == member.name:
-                similar.append(member)
-
-        return similar
+        return (member for member in self.get_all() if member.name == name)
 
 
 
@@ -49,11 +44,26 @@ class MembersStore:
 
     def update(self, member):
         # update member
+        result = member
         all_members = self.get_all()
         for index, current_member in enumerate(all_members):
             if current_member.id == member.id:
                 all_members[index] = member
 
+        return result
+
+    def get_members_with_posts(self, post_store):
+        for member, post in itertools.product(MembersStore.members, post_store):
+            if member.id == post.member_id:
+                member.posts.append(post)
+
+        for member in MembersStore.members:
+            yield member
+
+    def get_top_two(self, post_store):
+        membersposts = self.get_members_with_posts(post_store)
+        membersposts = sorted(membersposts, key=lambda x: len(x.posts), reverse=True)
+        return membersposts[:2]
 
 
 class PostsStore:

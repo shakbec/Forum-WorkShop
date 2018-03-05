@@ -7,6 +7,7 @@ class Member:
         self.id = 0
         self.name = name
         self.age = age
+        self.posts = []
 
     def __str__(self):
         return 'Id: {}, Name: {}, Age: {}'.format(self.id, self.name, self.age)
@@ -17,13 +18,14 @@ class Member:
 
 class Post:
 
-    def __init__(self, title, body):
+    def __init__(self, title, body, member_id):
         self.id = 0
         self.title = title
         self.body = body
+        self.member_id = member_id
 
     def __str__(self):
-        return 'Id: {}, Title: {}, Body: {}'.format(self.id, self.title, self.body)
+        return 'Id: {}, Title: {}, Body: {}, Member Id: {}'.format(self.id, self.title, self.body, self.member_id)
 
     def __repr__(self):
-        return 'Id: {}, Title: {}, Body: {}'.format(self.id, self.title, self.body)
+        return 'Id: {}, Title: {}, Body: {}, Member Id: {}'.format(self.id, self.title, self.body, self.member_id)
