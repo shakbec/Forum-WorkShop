@@ -10,7 +10,7 @@ def home():
 
 @app.route("/SayHello/<user>/")
 def hello(user):
-    return 'Hello %s' % user
+    return "Hello " + user
 
 
 app.run()
