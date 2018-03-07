@@ -1,12 +1,29 @@
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
 body{
     background-color:white;
     margin:0;
 }
-.paragraph{
-    color:purple;
-    font-size:100px;
 
-}
+
 .margin-title{
 	width: 980px;
 	height: 100px;
@@ -46,10 +63,9 @@ body{
 	width: 150px;
 	height: 250px;
 	background-color: #0c214e;
-	margin: 0;
-	font-size:18px;
-	color:white;
-	text-align: center;
+	margin: auto;
+	font-size:50px;
+
 }
 
 #main{
@@ -63,8 +79,8 @@ body{
 	width: 750px;
 	font-size: 20px;
     font-family: Arial;
-	color: #0e385f;
     font-weight: bold;
     margin-top: 40px;
 	line-height:29px;
 }
+

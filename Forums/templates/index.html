@@ -1,8 +1,9 @@
 <!doctype html>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+<html>
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
     <title>One Million Forum</title>
 
 </head>
@@ -24,34 +25,23 @@
         <div class="container">
             <div class="float-left">
                 <div class="side-bar">
-                    <p> All Topics</p>
-                    <p> My Topics </p>
-                    <p> Members </p>
-                    <p> Logout </p>
+                    <p><a href="#">All Topics</a></p>
+                    <p><a href="#">My Topics</a></p>
+                    <p><a href="#">Members</a></p>
+                    <p><a href="#">Logout</a></p>
                 </div>
             </div>
 
             <div class="float-right">
-                <p class="description"> Create New Post </p>
+                <p class="description"> <a href="#">Create New Post</a> </p>
                 <table style="width:100%">
+                 {% for post in posts %}
                   <tr>
-                    <th>Topic #</th>
-                    <th>Content</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>{{post.title}}</th>
+                    <th><a href="#">edit</a></th>
+                    <th><a href="#">delete</a></th>
                   </tr>
-                  <tr>
-                    <th>Topic #</th>
-                    <th>Content</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                  </tr>
-                  <tr>
-                    <th>Topic #</th>
-                    <th>Content</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                  </tr>
+                 {% endfor %}
                 </table>
             </div>
         </div>
@@ -61,4 +51,4 @@
 
 
 </body>
-
+</html>
